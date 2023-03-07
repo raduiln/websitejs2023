@@ -51,6 +51,7 @@ function watch_js() {
 }
 exports.buildcss = gulp.series(watch_scss);
 exports.buildjs = gulp.series(watch_js);
+
 // optional pentru imagini : gulp images
 const imagemin = require("gulp-imagemin");
 const imageminMozjpeg = require("imagemin-mozjpeg");
@@ -69,7 +70,7 @@ gulp.task("images", () => {
     stream = gulp
       //     calea catre imaginile pe care le dorim sa le optimizam
       //.src('assets/img/slide2.png')
-      .src("assets/images/*") // recursiv in toate subfolderele
+      .src("dev/img/*") // recursiv in toate subfolderele
       // daca apare o eroare nu se opreste si sare peste
       //.pipe(plumber())
       //     resize image
@@ -103,10 +104,10 @@ gulp.task("imagestowebp", () => {
   gulp
     .src("assets/img/*.{png,jpeg,jpg}")
     .pipe(webp())
-    .pipe(gulp.dest("assets/img"));
+    .pipe(gulp.dest("assets/images"));
 });
 
 function watch_img() {
-  return gulp.watch(["assets/images"], gulp.series("images", "imagestowebp"));
+  return gulp.watch(["dev/img"], gulp.series("images"));
 }
 exports.buildwebp = gulp.series(watch_img);
