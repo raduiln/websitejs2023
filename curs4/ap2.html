@@ -109,7 +109,7 @@
         function getData() {
             document.getElementById('loader').classList.remove('hidden');
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'holhttps://jsonplaceder.typicode.com/users', true);
+            xhr.open('GET', 'https://forbes400.onrender.com/api/forbes400?limit=100', true);
             xhr.onload = function () {
                 if (this.status == 200) {
                     const data = JSON.parse(this.responseText)
@@ -117,15 +117,7 @@
                     data.forEach(item => {
                         p.innerHTML += `
    <ul>
-   <li>ID: ${item.id}</li>
-   <li>Name: ${item.name}</li>
-   <li>Username: ${item.username}</li>
-   <li>Email: >${item.email}</li>
-   <li>Address: ${item.address}</li
-    <li>Street: ${item.address.street}</li
-    <li>Suite: ${item.address.suite}, ${item.address.city} </li
-    <li>Address: ${item.address.geo.lat}, ${item.address.geo.lng}</li
-
+   <li>Name: ${item.personName}</li>
    </ul>
    `
                     })

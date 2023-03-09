@@ -109,23 +109,17 @@
         function getData() {
             document.getElementById('loader').classList.remove('hidden');
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'holhttps://jsonplaceder.typicode.com/users', true);
+            xhr.open('GET', 'http://api.coindesk.com/v1/bpi/currentprice.json', true);
             xhr.onload = function () {
                 if (this.status == 200) {
                     const data = JSON.parse(this.responseText)
                     console.table(data);
-                    data.forEach(item => {
+                   data.forEach(item => {
                         p.innerHTML += `
    <ul>
-   <li>ID: ${item.id}</li>
-   <li>Name: ${item.name}</li>
-   <li>Username: ${item.username}</li>
-   <li>Email: >${item.email}</li>
-   <li>Address: ${item.address}</li
-    <li>Street: ${item.address.street}</li
-    <li>Suite: ${item.address.suite}, ${item.address.city} </li
-    <li>Address: ${item.address.geo.lat}, ${item.address.geo.lng}</li
-
+   <li>EUR: ${data.bpi.EUR.rate}</li>
+   <li>GBP: ${data.bpi.GBP.rate}</li>
+   <li>USD: ${data.bpi.USD.rate}</li>
    </ul>
    `
                     })
@@ -139,7 +133,7 @@
                 p.innerHTML = error;
             }
             xhr.send();
-        }
+         }
     </script>
 
 </body>
