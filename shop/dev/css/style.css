@@ -1,6 +1,15 @@
 #sec-contact {
   background-color: #152733; }
 
+/* dark mode */
+#icon {
+  width: 30px;
+  cursor: pointer; }
+
+.dark-theme {
+  background-color: #000106;
+  color: #fff; }
+
 .form-holder {
   display: flex;
   flex-direction: column;

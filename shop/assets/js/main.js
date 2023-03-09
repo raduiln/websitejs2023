@@ -26,6 +26,17 @@ scrollBtn.addEventListener("click", () => {
   });
 });
 
+// dark mode button
+var icon = document.getElementById("icon");
+icon.onclick = function () {
+  document.body.classList.toggle("dark-theme");
+  if (document.body.classList.contains("dark-theme")) {
+    icon.src = "assets/img/sun.png";
+  } else {
+    icon.src = "assets/img/moon.png";
+  }
+};
+
 var id;
 $("#modalForm").on("show.bs.modal", function (event) {
   var button = $(event.relatedTarget); //Button that triggered the modal
