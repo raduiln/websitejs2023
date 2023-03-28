@@ -24,31 +24,11 @@
       <!-- Start Section Navbar -->
       <div class="p-5 bg-warning">
             <h1>Demo Header</h1>
-      </div>
-      <nav id="navbar_top" class="navbar  navbar-expand-lg navbar-dark bg-primary">
-            <div class="container-fluid">
-                  <a href="#" class="navbar-brand">
-                        <img src="./assets/img/logo.svg" height="28" alt="Logo">
-                  </a>
-                  <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
-                        data-bs-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav">
-                              <a href="#sec-home" class="nav-item nav-link active">Acasa</a>
-                              <a href="#sec-about" class="nav-item nav-link">Despre</a>
-                              <a href="#sec-products" class="nav-item nav-link">Produse Noi</a>
-                              <a href="produse.html" class="nav-item nav-link">Produse</a>
-                              <a href="#sec-contact" class="nav-item nav-link">Contact</a>
-                        </div>
-                        <div class="navbar-nav ms-auto">
-                              <a href="#" class="nav-item nav-link">Login</a>
-                        </div>
-                  </div>
-            </div>
             <img src="./assets/img/moon.png" id="icon">
-      </nav>
+      </div>
+
+
+      <section w3-include-html="navbar.html"></section>
       <!-- Stop Section Navbar -->
 
       <!-- Start Section Carousel -->
@@ -198,8 +178,7 @@
             </div>
       </section>
       <!-- Stop Section About -->
-
-      <!--Start Produse  -->
+      <!-- Start Produse  -->
       <section id="sec-products" class="my-5">
             <!-- Main -->
             <div class="container">
@@ -216,9 +195,7 @@
                                                 data-description="Orange show details" data-price="0.8"
                                                 class="add-to-cart btn btn-primary">View more</a>
                                           <button data-id="orange-bio" type="button"
-                                                class="btn btn-success float-end">Add to Cart <input
-                                                      class=" quantity fw-bold text-black" style="width: 2rem;" min="0"
-                                                      name="quantity" value="1" type="number">
+                                                class="btn btn-success float-end">Add to Cart
                                           </button>
                                     </div>
                               </div>
@@ -235,9 +212,7 @@
                                                 data-name="Banana Bio" data-description="Banana show details"
                                                 data-price="1.98" class="add-to-cart btn btn-primary">View more</a>
                                           <button data-id="banana-bio" type="button"
-                                                class="btn btn-success float-end">Add to Cart <input
-                                                      class=" quantity fw-bold text-black" style="width: 2rem;" min="0"
-                                                      name="quantity" value="1" type="number">
+                                                class="btn btn-success float-end">Add to Cart
                                           </button>
                                     </div>
                               </div>
@@ -254,9 +229,7 @@
                                                 data-name="Lemon Bio" data-description="Lemon show details"
                                                 data-price="6.20" class="add-to-cart btn btn-primary">View more</a>
                                           <button data-id="lemon-bio" type="button"
-                                                class="btn btn-success float-end">Add to Cart <input
-                                                      class=" quantity fw-bold text-black" style="width: 2rem;" min="0"
-                                                      name="quantity" value="1" type="number">
+                                                class="btn btn-success float-end">Add to Cart
                                           </button>
                                     </div>
                               </div>
@@ -295,8 +268,7 @@
                                                 data-description="Orange show details" data-price="0.5"
                                                 class="add-to-cart btn btn-primary">View more</a>
                                           <button data-id="orange" type="button" class="btn btn-success float-end">Add
-                                                to Cart <input class=" quantity fw-bold text-black" style="width: 2rem;"
-                                                      min="0" name="quantity" value="1" type="number">
+                                                to Cart
                                           </button>
                                     </div>
                               </div>
@@ -313,8 +285,7 @@
                                                 data-name="Banana" data-description="Banana show details"
                                                 data-price="1.22" class="add-to-cart btn btn-primary">View more</a>
                                           <button data-id="banana" type="button" class="btn btn-success float-end">Add
-                                                to Cart <input class=" quantity fw-bold text-black" style="width: 2rem;"
-                                                      min="0" name="quantity" value="1" type="number">
+                                                to Cart
                                           </button>
                                     </div>
                               </div>
@@ -333,8 +304,6 @@
                                           <button data-id="lemon" type="button" class="btn btn-success float-end ">Add
                                                 to
                                                 Cart
-                                                <input class=" quantity fw-bold text-black" style="width: 2rem;" min="0"
-                                                      name="quantity" value="1" type="number">
                                           </button>
 
                                     </div>
@@ -461,6 +430,34 @@
             </div>
       </section>
       <!-- Stop Section Validare -->
+      <!-- Modal -->
+      <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                              <button type="button" class="close" data- bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                              </button>
+                        </div>
+                        <div class="modal-body">
+                              <table class="show-cart table">
+
+                              </table>
+                              <div>Total price: $<span class="total-cart"></span></div>
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Order now</button>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      <!-- END EDMO HTML -->
+      <!-- Footer -->
+      <div w3-include-html="footer.html"></div>
+
 
       <!-- Buton back to top -->
       <div className="scroll-to-top">
@@ -476,6 +473,7 @@
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
             crossorigin="anonymous"></script>
       <script src="./assets/js/main-min.js"></script>
+      <script src="./dev/js/include.js"></script>
 
 
 </body>
